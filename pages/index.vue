@@ -3,7 +3,7 @@
     <div>
       <Navbar ref="TheNavbar" />
     </div>
-    <div class="firstContainer bg-black h-screen w-screen">
+    <div class="firstContainer bg-black grid grid-cols-2  h-screen w-screen">
       <div
         class="
           w-full
@@ -29,8 +29,8 @@
 
 
 
-      <div>
-          <ImageContiner /> 
+      <div class="w-full h-full">
+          <ImageContiner class="ImageContainer opacity-0" /> 
       </div>
 
 
@@ -51,12 +51,15 @@ export default {
       const gsap = this.$gsap
 
       gsap.to('.firstContainer', {
-        backgroundColor: 'white',
+        backgroundColor: '#231F20',
         ease: 'power2.out',
       })
       gsap.to('.titles', {
         color: 'black',
         ease: 'power2.out',
+      })
+      gsap.to('.ImageContainer' , {
+        opacity: 1
       })
 
       this.$refs.TheNavbar.menuColorBlack()
@@ -71,6 +74,9 @@ export default {
         gsap.to('.titles', {
         color: 'white',
         ease: 'power2.out',
+      })
+        gsap.to('.ImageContainer' , {
+        opacity: 0
       })
        this.$refs.TheNavbar.menuColorWhite()
     },
