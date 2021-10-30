@@ -1,7 +1,7 @@
 <template >
-  <div class="container w-full h-auto justify-center flex">
+  <div class="w-full h-full flex justify-center">
     <img v-show="selectedImg" class="w-full" :src="img" alt="" />
-    <img v-show="!selectedImg" class="w-full" :src="img2" alt="" />
+    <img v-show="!selectedImg" :src="img2" alt="" />
   </div>
 </template>
 
@@ -10,11 +10,12 @@
 export default {
   data() {
     return {
-      img: '/genesha.png',
-      img2: '/muretos.png',
-      selectedImg: true
+      img: '/sunAndMoon.png',
+      img2: '/comanche.png',
+      selectedImg: true,
     }
   },
+
   methods: {
     togImg() {
       this.selectedImg = !this.selectedImg
