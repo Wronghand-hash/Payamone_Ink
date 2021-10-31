@@ -1,12 +1,12 @@
 <template>
-  <div class="firstContianer bg-black h-screen overflow-hidden">
+  <div class="firstContainer bg-black h-screen overflow-hidden">
     <div>
       <Navbar ref="TheNavbar" />
     </div>
 
     <div class="h-screen grid gap-0 grid-cols-2 grid-rows-3">
       <div class="ImageContainer flex justify-center">
-        <ImageContainer ref="ImageContainer"  />
+        <ImageContainer ref="ImageContainer" />
       </div>
 
       <div class="ImageContainer2 flex justify-center">
@@ -25,7 +25,9 @@
         "
       >
         <h1 class="text-5xl text-white">Paymaone Ink</h1>
-        <p class="text-white transform translate-y-5" @click="togImgs">Tap here !!</p>
+        <p class="text-white transform translate-y-5" @click="togImgs">
+          Tap here !!
+        </p>
       </div>
 
       <div class="ImageContainer3 flex justify-center">
@@ -147,7 +149,23 @@ export default {
     this.ContainerAnimation()
   },
   methods: {
-    togImgs(){
+    togImgs() {
+      const gsap = this.$gsap
+
+      gsap.to('.firstContainer', {
+        backgroundColor: () => {
+          const m = []
+          for (let i = 0; i < 80; i++) {
+            m.push(
+              '#' +
+                Math.floor(Math.random() * 10) +
+                Math.floor(Math.random() * 10) +
+                Math.floor(Math.random() * 10)
+            ) // to construct a color arrary.
+          }
+          return m
+        },
+      })
       this.$refs.ImageContainer.togImg()
       this.$refs.ImageContainer2.togImg()
       this.$refs.ImageContainer3.togImg()
@@ -169,7 +187,7 @@ export default {
           scale: 1,
           repeat: -1,
           yoyo: true,
-          repeatDelay: 4
+          repeatDelay: 4,
         }
       )
       tl.fromTo(
@@ -184,7 +202,7 @@ export default {
           scale: 1,
           repeat: -1,
           yoyo: true,
-         repeatDelay: 4
+          repeatDelay: 4,
         }
       )
       tl.fromTo(
@@ -199,7 +217,7 @@ export default {
           scale: 1,
           repeat: -1,
           yoyo: true,
-          repeatDelay: 4
+          repeatDelay: 4,
         }
       )
       tl.fromTo(
@@ -214,7 +232,7 @@ export default {
           scale: 1,
           repeat: -1,
           yoyo: true,
-          repeatDelay: 4
+          repeatDelay: 4,
         }
       )
     },
@@ -407,7 +425,6 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap');
-
 
 .titles {
   font-family: 'Miltonian Tattoo', cursive;
