@@ -22,10 +22,12 @@
           flex-col
           col-span-2
           payamoneInk
+          cursor-pointer
         "
+        @click="togImgs"
       >
-        <h1 class="text-5xl text-white">Paymaone Ink</h1>
-        <p class="text-white transform translate-y-5" @click="togImgs">
+        <h1 class="text-5xl text-white theHeader">Paymaone Ink</h1>
+        <p class="tapHere text-white transform translate-y-5" @click="togImgs">
           Tap here !!
         </p>
       </div>
@@ -166,6 +168,7 @@ export default {
           return m
         },
       })
+
       this.$refs.ImageContainer.togImg()
       this.$refs.ImageContainer2.togImg()
       this.$refs.ImageContainer3.togImg()
@@ -233,6 +236,18 @@ export default {
           repeat: -1,
           yoyo: true,
           repeatDelay: 4,
+        }
+      )
+      tl.fromTo(
+        '.tapHere',
+        0.3,
+        {
+          scale: 1.3,
+        },
+        {
+          scale: 1,
+          yoyo: true,
+          repeat: -1,
         }
       )
     },
