@@ -27,9 +27,7 @@
         @click="togImgs"
       >
         <h1 class="text-5xl text-white theHeader">Paymaone Ink</h1>
-        <p class="tapHere text-white transform translate-y-5" @click="togImgs">
-          Tap here !!
-        </p>
+        <p class="tapHere text-white transform translate-y-5">Tap here !!</p>
       </div>
 
       <div class="ImageContainer3 flex justify-center">
@@ -152,6 +150,11 @@ export default {
   },
   methods: {
     togImgs() {
+      this.$refs.ImageContainer.togImg()
+      this.$refs.ImageContainer2.togImg()
+      this.$refs.ImageContainer3.togImg()
+      this.$refs.ImageContainer4.togImg()
+
       const gsap = this.$gsap
 
       gsap.to('.firstContainer', {
@@ -168,11 +171,6 @@ export default {
           return m
         },
       })
-
-      this.$refs.ImageContainer.togImg()
-      this.$refs.ImageContainer2.togImg()
-      this.$refs.ImageContainer3.togImg()
-      this.$refs.ImageContainer4.togImg()
     },
     ContainerAnimation() {
       const gsap = this.$gsap
