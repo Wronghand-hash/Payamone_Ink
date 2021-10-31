@@ -1,7 +1,7 @@
 <template >
     <div class="w-full h-auto justify-center flex">
-        <img v-show="selectedImg" class="" :src="img" alt="">
-        <img v-show="!selectedImg" :src="img2" alt="">
+        <img v-show="selectedImg" class="object-contain" :src="img" alt="">
+        <img v-show="!selectedImg" class="object-contain" :src="img2" alt="">
     </div>
 </template>
 

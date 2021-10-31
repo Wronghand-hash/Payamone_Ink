@@ -1,7 +1,7 @@
 <template >
     <div class="w-full h-auto justify-center flex">
-        <img v-show="selectedImg" class="h-96" :src="img" alt="">
-        <img v-show="!selectedImg" class="" :src="img2" alt="">
+        <img v-show="selectedImg" class="object-contain" :src="img" alt="">
+        <img v-show="!selectedImg" class=" object-contain" :src="img2" alt="">
     </div>
 </template>
 
@@ -10,7 +10,7 @@
 export default {
     data(){
         return{
-            img: '/bull.png',
+            img: '/dragon.png',
             img2: '/samurai.png',
             selectedImg: true
         }

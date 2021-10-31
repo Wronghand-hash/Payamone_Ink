@@ -73,14 +73,27 @@ export default {
         color: 'black',
       })
     },
-     menuColorWhite() {
-    const gsap = this.$gsap
+    menuColorWhite() {
+      const gsap = this.$gsap
 
-    gsap.to('.menuButton', {
-      color: 'white',
-    })
+      gsap.to('.menuButton', {
+        color: 'white',
+      })
+    },
   },
-  },
- 
 }
 </script>
+
+
+<style scoped>
+.navbar {
+  transition: all 200ms ease-out;
+}
+
+.navbar-open {
+  transform: translateX(0%);
+}
+.navbar-close {
+  transform: translateX(-100%);
+}
+</style>
