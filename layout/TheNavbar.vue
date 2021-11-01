@@ -9,7 +9,7 @@
       bg-transparent
       Navbar
       opacity-100
-      z-50
+      z-40
       flex
       align-center
       justify-start
