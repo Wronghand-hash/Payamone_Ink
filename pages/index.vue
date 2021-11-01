@@ -1,41 +1,94 @@
 <template>
-  <div class="firstContainer bg-black h-screen overflow-hidden">
-    <div>
-      <Navbar ref="TheNavbar" />
+  <div class="bg-blueGray-700 overflow-hidden">
+    <div
+      class="
+        tabMenu
+        text-white
+        w-full
+        p-10
+        absolute
+        flex flex-row flex-wrap
+        justify-evenly
+        top-0
+        z-0
+      "
+      :class="{
+        hidden: tab === false,
+      }"
+    >
+      <h2 class="tabItems p-2 text-md">Home</h2>
+      <h2 class="tabItems p-2 text-md">Collections</h2>
+      <h2 class="tabItems p-2 text-md">ContactUs</h2>
+      <h2 class="tabItems p-2 text-md">Acapulco Design</h2>
+      <h2 class="tabItems p-2 text-md">Comanche</h2>
     </div>
-
-    <div class="h-screen grid gap-0 grid-cols-2 grid-rows-3">
-      <div class="ImageContainer flex justify-center">
-        <ImageContainer ref="ImageContainer" />
+    <div
+      class="
+        firstContainer
+        bg-black
+        h-screen
+        overflow-hidden
+        shadow-xl
+      "
+      :class="{
+        'rounded-xl': tab === true,
+      }"
+    >
+      <div>
+        <Navbar ref="TheNavbar" />
       </div>
 
-      <div class="ImageContainer2 flex justify-center">
-        <ImageContainer2 ref="ImageContainer2" />
-      </div>
-
-      <div
+      <button
         class="
-          theHeader
-          flex
-          justify-center
-          items-center
-          flex-col
-          col-span-2
-          payamoneInk
+          z-50
+          self-center
+          absolute
           cursor-pointer
+          right-0
+          p-3
+          text-white
+          rounded
+          bg-purple-500
+          m-2
         "
-        @click="togImgs"
+        @click="togTab"
       >
-        <h1 class="text-5xl text-white theHeader">Paymaone Ink</h1>
-        <p class="tapHere text-white transform translate-y-5">Tap here !!</p>
-      </div>
+        do
+      </button>
 
-      <div class="ImageContainer3 flex justify-center">
-        <ImageContainer3 ref="ImageContainer3" />
-      </div>
+      <div class="h-screen grid gap-0 grid-cols-2 grid-rows-3">
+        <div class="ImageContainer flex justify-center">
+          <ImageContainer ref="ImageContainer" />
+        </div>
 
-      <div class="ImageContainer4 flex flex-col items-center justify-center">
-        <ImageContainer4 ref="ImageContainer4" />
+        <div class="ImageContainer2 flex justify-center">
+          <ImageContainer2 ref="ImageContainer2" />
+        </div>
+
+        <div
+          class="
+            theHeader
+            flex
+            justify-center
+            items-center
+            flex-col
+            col-span-2
+            payamoneInk
+            cursor-pointer
+          "
+          @click="togImgs"
+        >
+          <h1 class="text-5xl text-white theHeader">Paymaone Ink</h1>
+          <p class="tapHere text-white transform translate-y-5">Tap here !!</p>
+        </div>
+
+        <div class="ImageContainer3 flex justify-center">
+          <ImageContainer3 ref="ImageContainer3" />
+        </div>
+
+        <div class="ImageContainer4 flex flex-col items-center justify-center">
+          <ImageContainer4 ref="ImageContainer4" />
+        </div>
       </div>
     </div>
   </div>
@@ -145,10 +198,44 @@ export default {
     ImageContainer3,
     ImageContainer4,
   },
+  data() {
+    return {
+      tab: false,
+    }
+  },
+  watch: {
+    tab() {
+      if (this.tab) {
+        this.tabActivator()
+        this.tabItemsAnimation()
+      } else {
+        this.deactivateTab()
+      }
+    },
+  },
   mounted() {
     this.ContainerAnimation()
   },
   methods: {
+    togTab() {
+      this.tab = !this.tab
+    },
+    tabActivator() {
+      const gsap = this.$gsap
+
+      gsap.to('.firstContainer', {
+        y: 300,
+        scale: 0.9
+      })
+    },
+    deactivateTab() {
+      const gsap = this.$gsap
+
+      gsap.to('.firstContainer', {
+        y: 0,
+        scale: 1
+      })
+    },
     togImgs() {
       this.$refs.ImageContainer.togImg()
       this.$refs.ImageContainer2.togImg()
@@ -181,7 +268,7 @@ export default {
         1,
         {
           opacity: 0,
-          scale: 2,
+          scale: 1.5,
         },
         {
           opacity: 1,
@@ -196,7 +283,7 @@ export default {
         1,
         {
           opacity: 0,
-          scale: 2,
+          scale: 1.5,
         },
         {
           opacity: 1,
@@ -211,7 +298,7 @@ export default {
         1,
         {
           opacity: 0,
-          scale: 2,
+          scale: 1.5,
         },
         {
           opacity: 1,
@@ -226,7 +313,7 @@ export default {
         1,
         {
           opacity: 0,
-          scale: 2,
+          scale: 1.5,
         },
         {
           opacity: 1,
@@ -248,6 +335,15 @@ export default {
           repeat: -1,
         }
       )
+    },
+    tabItemsAnimation() {
+      const gsap = this.$gsap
+
+      gsap.from('.tabItems', {
+        x: 100,
+        opacity: 0,
+        stagger: 0.3,
+      })
     },
     // colorChange() {
     //   const gsap = this.$gsap
@@ -445,5 +541,19 @@ export default {
 
 .theHeader {
   font-family: 'Miltonian Tattoo', cursive;
+}
+
+.tabMenu {
+  font-family: 'Miltonian Tattoo', cursive;
+}
+
+.tapHere {
+  font-size: 1.5em;
+  margin-top: -0.6em;
+  color: white;
+  text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+  transform: rotate(-7deg);
+  stroke: #ffffff;
+  stroke-width: 8px;
 }
 </style>
