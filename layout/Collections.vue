@@ -1,5 +1,8 @@
 <template>
   <div class="firstContainer h-screen w-screen bg-Lime-500">
+      <div>
+          <TheNavbar />
+      </div>
     <div
       class="
         flex flex-col
@@ -15,3 +18,13 @@
     </div>
   </div>
 </template>
+
+<script>
+import TheNavbar from '~/layout/TheNavbar.vue'
+
+
+export default {
+components:{TheNavbar}
+
+}
+</script>
