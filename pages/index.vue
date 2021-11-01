@@ -11,8 +11,7 @@
         p-3
         rounded
         m-2
-        text-xl
-        text-white
+        text-xl text-white
         font-bold
       "
       @click="togTab"
@@ -35,19 +34,31 @@
         hidden: tab === false,
       }"
     >
-      <h2 class="tabItems p-2 text-md" @click="switchComponent('LandingPage')">
+      <h2
+        class="tabItems p-2 text-md cursor-pointer"
+        @click="switchComponent('LandingPage')"
+      >
         Home
       </h2>
-      <h2 class="tabItems p-2 text-md" @click="switchComponent('Collections')">
+      <h2
+        class="tabItems p-2 text-md cursor-pointer"
+        @click="switchComponent('Collections')"
+      >
         Collections
       </h2>
-      <h2 class="tabItems p-2 text-md">ContactUs</h2>
-      <h2 class="tabItems p-2 text-md">Acapulco Design</h2>
-      <h2 class="tabItems p-2 text-md">Comanche</h2>
+      <h2 class="tabItems p-2 text-md cursor-pointer">ContactUs</h2>
+      <h2 class="tabItems p-2 text-md cursor-pointer">Acapulco Design</h2>
+      <h2 class="tabItems p-2 text-md cursor-pointer">Comanche</h2>
     </div>
     <div>
       <keep-alive>
-        <conponent :is="component" :class="{ 'rounded-xl': tab === true }" />
+        <conponent
+          :is="component"
+          v-gsap.from="{
+            opacity: 0,
+          }"
+          :class="{ 'rounded-xl': tab === true }"
+        />
       </keep-alive>
     </div>
   </div>
@@ -71,7 +82,7 @@ export default {
   },
   watch: {
     component() {
-        this.deactivateTab()
+      this.deactivateTab()
     },
     tab() {
       if (this.tab) {
@@ -97,6 +108,7 @@ export default {
       gsap.to('.firstContainer', {
         y: 300,
         scale: 0.9,
+        ease: "expo.inOut",
       })
     },
     deactivateTab() {
@@ -105,13 +117,14 @@ export default {
       gsap.to('.firstContainer', {
         y: 0,
         scale: 1,
+        ease: "expo.inOut",
       })
     },
     tabItemsAnimation() {
       const gsap = this.$gsap
 
       gsap.from('.tabItems', 0.5, {
-        x: 100,
+        x: 50,
         opacity: 0,
         stagger: 0.2,
       })
