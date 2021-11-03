@@ -55,9 +55,6 @@
     >
       maybe some img
     </div>
-    <div class="h-52">
-      <h2>some div to make space for the animatinos motherfucker</h2>
-    </div>
   </div>
 </template>
 
