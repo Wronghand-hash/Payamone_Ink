@@ -124,7 +124,7 @@
       </keep-alive>
     </div>
     <div class="secondDiv">
-      <ShowCase  />
+      <ShowCase :class="{ 'rounded-xl': tab === true }"  />
     </div>
   </div>
 </template>
@@ -179,7 +179,7 @@ export default {
       })
 
       gsap.to('.mainDiv' , {
-        y: -200, 
+        y: -320, 
         scale: 0.9,
         ease: 'expo.inOut'
       })
