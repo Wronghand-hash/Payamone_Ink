@@ -11,7 +11,7 @@
         content-center
       "
     >
-      <h1 class="text-3xl text-Lime-500 transform translate-y-12 -translate-x-4">Acapulco Crew</h1>
+      <h1 class="text-3xl text-Lime-500 transform translate-y-12 -translate-x-4 lg:text-5xl">Acapulco Crew</h1>
       <img class="absolute" src="/hawaii.svg" alt="" />
     </div>
   </div>
@@ -19,6 +19,8 @@
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
 .moreInfoMain {
+    font-family: 'Fruktur', cursive;
 }
 </style>
