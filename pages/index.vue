@@ -34,32 +34,97 @@
         hidden: tab === false,
       }"
     >
-      <h2
-        class="tabItems p-2 text-md cursor-pointer"
+      <button
+        class="
+          bg-goldie
+          p-3
+          m-2
+          rounded
+          shadow-xl
+          tabItems
+          p-2
+          text-md
+          cursor-pointer
+        "
         @click="switchComponent('LandingPage')"
       >
         Home
-      </h2>
-      <h2
-        class="tabItems p-2 text-md cursor-pointer"
+      </button>
+      <button
+        class="
+          bg-goldie
+          p-3
+          m-2
+          rounded
+          shadow-xl
+          tabItems
+          p-2
+          text-md
+          cursor-pointer
+        "
         @click="switchComponent('Collections')"
       >
         Collections
-      </h2>
-      <h2 class="tabItems p-2 text-md cursor-pointer">ContactUs</h2>
-      <h2 class="tabItems p-2 text-md cursor-pointer">Acapulco Design</h2>
-      <h2 class="tabItems p-2 text-md cursor-pointer">Comanche</h2>
+      </button>
+      <button
+        class="
+          bg-goldie
+          p-3
+          m-2
+          rounded
+          shadow-xl
+          tabItems
+          p-2
+          text-md
+          cursor-pointer
+        "
+      >
+        ContactUs
+      </button>
+      <button
+        class="
+          bg-goldie
+          p-3
+          m-2
+          rounded
+          shadow-xl
+          tabItems
+          p-2
+          text-md
+          cursor-pointer
+        "
+      >
+        Acapulco Design
+      </button>
+      <button
+        class="
+          bg-goldie
+          p-3
+          m-2
+          rounded
+          shadow-xl
+          tabItems
+          p-2
+          text-md
+          cursor-pointer
+        "
+      >
+        Comanche
+      </button>
     </div>
-    <div>
+    <div class="firstDiv">
       <keep-alive>
         <conponent
           :is="component"
           v-gsap.from="{
             opacity: 0,
           }"
-          :class="{ 'rounded-xl': tab === true }"
+          :class="{ 'rounded-xl z-10': tab === true }"
         />
       </keep-alive>
+    </div>
+    <div class="secondDiv">
+      <ShowCase  />
     </div>
   </div>
 </template>
@@ -67,11 +132,13 @@
 <script>
 import LandingPage from '~/layout/LandingPage.vue'
 import Collections from '~/layout/Collections.vue'
+import ShowCase from '~/layout/ShowCase.vue'
 
 export default {
   name: 'App',
   components: {
     LandingPage,
+    ShowCase,
     Collections,
   },
   data() {
@@ -108,7 +175,13 @@ export default {
       gsap.to('.firstContainer', {
         y: 300,
         scale: 0.9,
-        ease: "expo.inOut",
+        ease: 'expo.inOut',
+      })
+
+      gsap.to('.mainDiv' , {
+        y: -200, 
+        scale: 0.9,
+        ease: 'expo.inOut'
       })
     },
     deactivateTab() {
@@ -117,14 +190,19 @@ export default {
       gsap.to('.firstContainer', {
         y: 0,
         scale: 1,
-        ease: "expo.inOut",
+        ease: 'expo.inOut',
+      })
+      gsap.to('.mainDiv' , {
+        y: 0, 
+        scale: 1,
+        ease: 'expo.inOut'
       })
     },
     tabItemsAnimation() {
       const gsap = this.$gsap
 
       gsap.from('.tabItems', 0.5, {
-        x: 50,
+        x: 90,
         opacity: 0,
         stagger: 0.2,
       })
