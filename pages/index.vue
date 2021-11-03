@@ -124,7 +124,10 @@
       </keep-alive>
     </div>
     <div class="secondDiv">
-      <ShowCase :class="{ 'rounded-xl': tab === true }"  />
+      <ShowCase :class="{ 'rounded-xl': tab === true }" />
+    </div>
+    <div class="thirdDiv">
+      <MoreInfo :class="{ 'rounded-xl': tab === true }" />
     </div>
   </div>
 </template>
@@ -133,6 +136,7 @@
 import LandingPage from '~/layout/LandingPage.vue'
 import Collections from '~/layout/Collections.vue'
 import ShowCase from '~/layout/ShowCase.vue'
+import MoreInfo from '~/layout/moreInfo.vue'
 
 export default {
   name: 'App',
@@ -140,6 +144,7 @@ export default {
     LandingPage,
     ShowCase,
     Collections,
+    MoreInfo,
   },
   data() {
     return {
@@ -178,10 +183,17 @@ export default {
         ease: 'expo.inOut',
       })
 
-      gsap.to('.mainDiv' , {
-        y: -320, 
+      gsap.to('.mainDiv', {
+        y: -320,
+        x: 30,
         scale: 0.9,
-        ease: 'expo.inOut'
+        ease: 'expo.inOut',
+      })
+      gsap.to('.moreInfoMain', {
+        y: -930,
+        x: 50,
+        scale: 0.9,
+        ease: 'expo.inOut',
       })
     },
     deactivateTab() {
@@ -192,10 +204,17 @@ export default {
         scale: 1,
         ease: 'expo.inOut',
       })
-      gsap.to('.mainDiv' , {
-        y: 0, 
+      gsap.to('.mainDiv', {
+        y: 0,
+        x: 0,
         scale: 1,
-        ease: 'expo.inOut'
+        ease: 'expo.inOut',
+      })
+      gsap.to('.moreInfoMain', {
+        y: 0,
+        x: 0,
+        scale: 1,
+        ease: 'expo.inOut',
       })
     },
     tabItemsAnimation() {
