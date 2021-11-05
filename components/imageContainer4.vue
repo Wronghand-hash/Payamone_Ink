@@ -11,7 +11,7 @@ export default {
   data() {
     return {
       img: '/sunAndMoon.png',
-      img2: '/comanche.png',
+      img2: '/comanche.svg',
       selectedImg: true,
     }
   },

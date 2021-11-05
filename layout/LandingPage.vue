@@ -184,6 +184,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap');
 
+
 .titles {
   font-family: 'Miltonian Tattoo', cursive;
 }

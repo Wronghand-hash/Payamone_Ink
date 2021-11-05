@@ -10,8 +10,8 @@
 export default {
     data(){
         return{
-            img: '/dragon.png',
-            img2: '/samurai.png',
+            img: '/dragon.svg',
+            img2: '/samurai.svg',
             selectedImg: true
         }
     },
