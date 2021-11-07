@@ -4,13 +4,12 @@ module.exports = {
   purge: [
     './components/**/*.{vue,js}',
 
-    './layouts/**/*.vue',
+    './layout/**/*.vue',
 
     './pages/**/*.vue',
 
-    './plugins/**/*.{js,ts}',
 
-    './nuxt.config.{js,ts}',
+    './nuxt.config.js',
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -44,6 +43,7 @@ module.exports = {
       white: colors.white,
       black: colors.black,
       gray: colors.trueGray,
+      LightBlue: colors.lightBlue,
       red: colors.red,
       blue: colors.blue,
       yellow: colors.yellow,
