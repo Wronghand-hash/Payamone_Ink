@@ -11,16 +11,30 @@
         content-center
       "
     >
-      <h1 class="text-3xl text-Lime-500 transform translate-y-12 -translate-x-4 lg:text-5xl">Acapulco Crew</h1>
-      <img class="absolute" src="/hawaii.svg" alt="" />
+   
+      <div class="">
+        <img class="object-contain" src="/hawaii.svg" alt="" />
+      </div>
+         <h1
+        class="
+          text-3xl text-Lime-500
+          transform
+          translate-y-14
+           lg:translate-y-28
+           lg:translate-x-24
+          lg:text-7xl
+          absolute
+        "
+      >
+        Acapulco Crew
+      </h1>
     </div>
   </div>
 </template>
 
-
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
 .moreInfoMain {
-    font-family: 'Fruktur', cursive;
+  font-family: 'Fruktur', cursive;
 }
 </style>

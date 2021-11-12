@@ -20,8 +20,8 @@
 export default {
   data() {
     return {
-      img: '/genesha.png',
-      img2: '/muretos.png',
+      img: '/bull.svg',
+      img2: '/genesha.svg',
       selectedImg: true,
     }
   },

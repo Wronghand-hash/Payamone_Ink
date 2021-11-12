@@ -87,6 +87,9 @@ export default {
     Collections,
     MoreInfo,
   },
+   generate: {
+    routes: ['~/layout/LandingPage.vue', '~/layout/Collections.vue',  '~/layout/ShowCase.vue', '~/layout/moreInfo.vue' ]
+  },
   data() {
     return {
       tab: false,

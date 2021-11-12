@@ -10,8 +10,8 @@
 export default {
     data(){
         return{
-            img: '/moth.png',
-            img2: '/snake.png',
+            img: '/muretos.svg',
+            img2: '/moth.svg',
             selectedImg: true 
         }
     },
