@@ -31,11 +31,11 @@
         "
         @click="togImgs"
       >
-        <h1 class="text-5xl lg:text-7xl text-white theHeader">Paymaone Ink</h1>
-        <p class="tapHere text-Lime-500 transform translate-y-5">Tap here !!</p>
+        <h1 class="text-5xl lg:text-7xl text-white theHeader">PaymaOne Ink</h1>
+        <!-- <p class="tapHere text-Lime-500 transform translate-y-5">Tap here !!</p>
         <p class="text-2xl text-white p-5 m-2 vitaminC">
           You're losing your vitamin C
-        </p>
+        </p> -->
       </div>
 
       <div class="ImageContainer3 flex justify-center">
@@ -48,8 +48,6 @@
     </div>
   </div>
 </template>
-
-
 
 <script>
 import Navbar from '../layout/TheNavbar.vue'
@@ -182,19 +180,9 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap');
-
-.titles {
-  font-family: 'Miltonian Tattoo', cursive;
-}
-
 .theHeader {
-  font-family: 'Miltonian Tattoo', cursive;
-  text-shadow: 0 0 0.05em rgb(72, 255, 0), 0 0 0.2em #e7f708, 0 0 0.3em #00ff22fb;
-}
-
-.tabMenu {
-  font-family: 'Miltonian Tattoo', cursive;
+  text-shadow: 0 0 0.05em rgb(72, 255, 0), 0 0 0.2em #e7f708,
+    0 0 0.3em #00ff22fb;
 }
 
 .tapHere {

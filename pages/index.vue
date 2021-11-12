@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-blueGray-700 overflow-hidden">
+  <div class="bg-yellow-500 overflow-hidden">
     <button
       class="
         z-50
@@ -16,7 +16,7 @@
       "
       @click="togTab"
     >
-      Do
+      Explore
     </button>
     <div
       class="
@@ -34,83 +34,21 @@
         hidden: tab === false,
       }"
     >
-      <button
-        class="
-          bg-goldie
-          p-3
-          m-2
-          rounded
-          shadow-xl
-          tabItems
-          p-2
-          text-md
-          cursor-pointer
-        "
-        @click="switchComponent('LandingPage')"
+      <Button class="tabItems" @click="switchComponent('Collections')"
+        >Home</Button
       >
-        Home
-      </button>
-      <button
-        class="
-          bg-goldie
-          p-3
-          m-2
-          rounded
-          shadow-xl
-          tabItems
-          p-2
-          text-md
-          cursor-pointer
-        "
-        @click="switchComponent('Collections')"
+
+      <Button class="tabItems" @click="switchComponent('Collections')"
+        >Collections</Button
       >
-        Collections
-      </button>
-      <button
-        class="
-          bg-goldie
-          p-3
-          m-2
-          rounded
-          shadow-xl
-          tabItems
-          p-2
-          text-md
-          cursor-pointer
-        "
+      <Button class="tabItems" @click="switchComponent('Collections')"
+        >ContactUs</Button
+      ><Button class="tabItems" @click="switchComponent('Collections')"
+        >Acapulco Design</Button
       >
-        ContactUs
-      </button>
-      <button
-        class="
-          bg-goldie
-          p-3
-          m-2
-          rounded
-          shadow-xl
-          tabItems
-          p-2
-          text-md
-          cursor-pointer
-        "
+      <Button class="tabItems" @click="switchComponent('Collections')"
+        >Comanche</Button
       >
-        Acapulco Design
-      </button>
-      <button
-        class="
-          bg-goldie
-          p-3
-          m-2
-          rounded
-          shadow-xl
-          tabItems
-          p-2
-          text-md
-          cursor-pointer
-        "
-      >
-        Comanche
-      </button>
     </div>
     <div class="firstDiv">
       <keep-alive>
@@ -133,6 +71,8 @@
 </template>
 
 <script>
+import Button from '../components/DefaultButton.vue'
+
 import LandingPage from '~/layout/LandingPage.vue'
 import Collections from '~/layout/Collections.vue'
 import ShowCase from '~/layout/ShowCase.vue'
@@ -141,6 +81,7 @@ import MoreInfo from '~/layout/moreInfo.vue'
 export default {
   name: 'App',
   components: {
+    Button,
     LandingPage,
     ShowCase,
     Collections,
@@ -239,19 +180,15 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap');
-
-.titles {
-  font-family: 'Miltonian Tattoo', cursive;
-}
-
 .theHeader {
-  font-family: 'Miltonian Tattoo', cursive;
-  text-shadow: 0 0 0.05em rgb(255, 251, 0), 0 0 0.2em #ff0095, 0 0 0.3em #ff00c8;
-}
-
-.tabMenu {
-  font-family: 'Miltonian Tattoo', cursive;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 120px;
+  letter-spacing: 0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  text-shadow: 8px 8px #ffc402, 20px 20px #000000;
 }
 
 .tapHere {

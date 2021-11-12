@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Patua One', cursive;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #e28b0a #00ffff;
+}
+html {
+  font-family: 'Patua One', cursive;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+@media only screen and (max-width: 767px) {
+  *::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #f3ff4d;
+  border: 0px none #ffffff;
+  border-radius: 86px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ecad00;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #c78b00;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+  border: 0px none #ffffff;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #2c2c2c;
+}
+::-webkit-scrollbar-track:active {
+  background: #3b3b3b;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

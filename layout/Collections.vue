@@ -34,6 +34,6 @@ export default {
 
 <style scoped>
 .kisTattoo {
-  font-family: 'Miltonian', cursive;
+  font-family: 'Merriweather', serif;
 }
 </style>

@@ -2,6 +2,7 @@
   <!-- <v-app> -->
   <div
     class="
+      mt-5
       fixed
       w-screen
       h-20
@@ -19,7 +20,15 @@
     <div>
       <div class="flex justify-center">
         <button
-          class="menuButton self-center p-2 text-white text-xl font-bold scale-125"
+          class="
+            menuButton
+            self-center
+            p-2
+            text-white text-xl
+            font-bold
+            transform
+            scale-125
+          "
           @click="tog()"
         >
           &#9776;
@@ -27,24 +36,25 @@
       </div>
     </div>
     <nav
-      :class="open ? 'navbar-open' : 'navbar-close'"
       id="navbar"
-      class="navbar w-60 absolute bg-Sky-500 top-0 -left-60 h-screen"
+      :class="open ? 'navbar-open' : 'navbar-close'"
+      class="navbar w-60 absolute bg-yellow-400 top-0 -left-60 h-screen"
     >
       <div class="flex pr-2 justify-end rounded">
-        <button class="p-2 text-white text-xl font-bold" @click="tog()">
-          &#9747;
+        <button class="p-2 text-black text-xl font-bold" @click="tog()">
+          <img
+            src="~/assets/images/close.png"
+            class="object-contain w-7"
+            alt=""
+          />
         </button>
       </div>
-      <h1 class="text-xl text-center font-bold pt-5">Menu</h1>
-      <ul class="list-none text-white text-center">
-        <li class="navItems cursor-pointer my-8"><a href="#"></a>Teams</li>
-        <li class="navItems cursor-pointer my-8"><a href="#"></a>Projects</li>
-        <li class="navItems cursor-pointer my-8"><a href="#"></a>Favourites</li>
-        <li class="navItems cursor-pointer my-8">
-          <a href="#"></a>Notifications
-        </li>
-        <li class="navItems cursor-pointer my-8"><a href="#"></a>Members</li>
+      <ul class="list-none text-center text-xl lg:text-2xl">
+        <Button>Teams</Button>
+        <Button>Projects</Button>
+        <Button>Favorites</Button>
+        <Button>Contact US</Button>
+        <Button>Members</Button>
       </ul>
     </nav>
   </div>
@@ -52,7 +62,11 @@
 </template>
 
 <script>
+import Button from '../components/DefaultButton.vue'
 export default {
+  components: {
+    Button,
+  },
   data() {
     return {
       open: false,
@@ -115,13 +129,11 @@ export default {
 }
 </script>
 
-
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap');
-
 .navbar {
-  font-family: 'Miltonian Tattoo', cursive;
+  font-family: 'Patua One', cursive;
 }
+
 /* 
 .navbar-open {
   transform: translateX(0%);
@@ -129,4 +141,5 @@ export default {
 .navbar-close {
   transform: translateX(-100%);
 } */
+/* CSS */
 </style>
