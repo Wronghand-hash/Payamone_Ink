@@ -7,22 +7,31 @@
         h-full
         items-center
         justify-center
-        align-center
-        content-center
+        content-end
       "
     >
-   
-      <div class="">
-        <img class="object-contain" src="/hawaii.svg" alt="" />
+      <div class="w-full h-full flex justify-end">
+        <img
+          class="
+            object-contain
+            w-full
+            h-full
+            transform
+            scale-150
+            lg:scale-125
+            -translate-y-8
+            lg:translate-y-8
+          "
+          src="/hawaii.svg"
+          alt=""
+        />
       </div>
-         <h1
+      <h1
         class="
           text-3xl text-Lime-500
           transform
           translate-y-14
-           lg:translate-y-28
-           lg:translate-x-24
-          lg:text-7xl
+          lg:translate-y-28 lg:translate-x-50 lg:text-7xl
           absolute
         "
       >
@@ -31,6 +40,16 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      tab: false,
+    }
+  },
+}
+</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');

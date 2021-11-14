@@ -16,7 +16,13 @@
       "
       @click="togTab"
     >
-      Explore
+      <conponent
+        :is="topIcon"
+        v-gsap.from="{
+          scale: 0,
+          opacity: 0,
+        }"
+      />
     </button>
     <div
       class="
@@ -61,7 +67,7 @@
         />
       </keep-alive>
     </div>
-    <div class="secondDiv">
+    <div class="secondDiv h-full">
       <ShowCase :class="{ 'rounded-xl': tab === true }" />
     </div>
     <div class="thirdDiv">
@@ -71,6 +77,7 @@
 </template>
 
 <script>
+import { MenuAlt3Icon, XIcon } from '@vue-hero-icons/solid'
 import Button from '../components/DefaultButton.vue'
 
 import LandingPage from '~/layout/LandingPage.vue'
@@ -86,14 +93,22 @@ export default {
     ShowCase,
     Collections,
     MoreInfo,
+    MenuAlt3Icon,
+    XIcon,
   },
-   generate: {
-    routes: ['~/layout/LandingPage.vue', '~/layout/Collections.vue',  '~/layout/ShowCase.vue', '~/layout/moreInfo.vue' ]
+  generate: {
+    routes: [
+      '~/layout/LandingPage.vue',
+      '~/layout/Collections.vue',
+      '~/layout/ShowCase.vue',
+      '~/layout/moreInfo.vue',
+    ],
   },
   data() {
     return {
       tab: false,
       component: 'LandingPage',
+      topIcon: 'MenuAlt3Icon',
     }
   },
   watch: {
@@ -104,16 +119,22 @@ export default {
       if (this.tab) {
         this.tabActivator()
         this.tabItemsAnimation()
+        this.topIcon = 'XIcon'
+        this.$store.dispatch('changeTab')
       } else {
         this.deactivateTab()
+        this.topIcon = 'MenuAlt3Icon'
+        this.$store.dispatch('changeTab')
       }
     },
   },
   mounted() {},
   methods: {
     switchComponent(comp) {
-      this.component = comp
-      this.togTab()
+      if (this.tab) {
+        this.component = comp
+        this.togTab()
+      }
     },
     togTab() {
       this.tab = !this.tab
@@ -126,7 +147,6 @@ export default {
         scale: 0.9,
         ease: 'expo.inOut',
       })
-
       gsap.to('.mainDiv', {
         y: -320,
         x: 30,

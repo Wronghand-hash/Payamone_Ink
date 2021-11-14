@@ -17,8 +17,8 @@
       lg:px-9
     "
   >
-    <div>
-      <div class="flex justify-center">
+    <div class="flex justify-center mx-2 my-1">
+      <div class="flex justify-center p-2">
         <button
           class="
             menuButton
@@ -31,7 +31,7 @@
           "
           @click="tog()"
         >
-          &#9776;
+          <MenuAlt1Icon />
         </button>
       </div>
     </div>
@@ -134,7 +134,7 @@ export default {
   font-family: 'Patua One', cursive;
 }
 
-/* 
+/*
 .navbar-open {
   transform: translateX(0%);
 }
