@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-yellow-500 overflow-hidden">
+  <div
+    class="bg-yellow-500 overflow-hidden"
+    :class="{ 'h-screen': tab === true }"
+  >
     <button
       class="
         z-50
@@ -40,25 +43,25 @@
         hidden: tab === false,
       }"
     >
-      <Button class="tabItems" @click="switchComponent('Collections')"
-        >Home</Button
+      <Button class="tabItems"
+        ><h1 @click="changeComponent('LandingPage')">Home</h1></Button
       >
 
-      <Button class="tabItems" @click="switchComponent('Collections')"
-        >Collections</Button
+      <Button class="tabItems" @click="changeComponent('Collections')"
+        ><h1 @click="changeComponent('Collections')">Collection</h1></Button
       >
-      <Button class="tabItems" @click="switchComponent('Collections')"
+      <Button class="tabItems" @click="changeComponent('Collections')"
         >ContactUs</Button
-      ><Button class="tabItems" @click="switchComponent('Collections')"
+      ><Button class="tabItems" @click="changeComponent('Collections')"
         >Acapulco Design</Button
       >
-      <Button class="tabItems" @click="switchComponent('Collections')"
+      <Button class="tabItems" @click="changeComponent('Collections')"
         >Comanche</Button
       >
     </div>
     <div class="firstDiv">
       <keep-alive>
-        <conponent
+        <component
           :is="component"
           v-gsap.from="{
             opacity: 0,
@@ -130,10 +133,9 @@ export default {
   },
   mounted() {},
   methods: {
-    switchComponent(comp) {
-      if (this.tab) {
+    changeComponent(comp) {
+      if(this.tab){
         this.component = comp
-        this.togTab()
       }
     },
     togTab() {
